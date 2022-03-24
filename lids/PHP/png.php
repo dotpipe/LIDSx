@@ -91,7 +91,7 @@ class PNG
             }
             $i++;
             //echo ($intersect / $i) . " ";
-            if ($i > (min(strlen($bri),strlen($svf))/min(strlen($bri),strlen($svf)))*100 && $intersect / $i > 0.04)
+            if ($i > (min(strlen($bri),strlen($svf))/min(strlen($bri),strlen($svf)))*25 && $intersect / $i > 0.04)
              {
                 $input->crops = array($file, $intersect / $i);
                 $tier->label_search($input);
