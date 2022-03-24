@@ -90,16 +90,16 @@ class PNG
                 $intersect++;
             }
             $i++;
-        }
-        //echo ($intersect / $i) . " ";
-        if ($i > 0 && $intersect / $i > 0.04)
-         {
-            $input->crops = array($file, $intersect / $i);
-            $tier->label_search($input);
-            $RETURN = 0;
-            flush();
-            \ob_flush();
-            return 1;
+            //echo ($intersect / $i) . " ";
+            if ($i > (min(strlen($bri),strlen($svf))/min(strlen($bri),strlen($svf)))*100 && $intersect / $i > 0.04)
+             {
+                $input->crops = array($file, $intersect / $i);
+                $tier->label_search($input);
+                $RETURN = 0;
+                flush();
+                \ob_flush();
+                return 1;
+            }
         }
         return 0;
     }
